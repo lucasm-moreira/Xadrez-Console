@@ -54,7 +54,7 @@
             if (!posicaoValida(pos))
             {
                 throw new TabuleiroException("Posição inválida!");
-            }
+            } 
         }
     }
 }
