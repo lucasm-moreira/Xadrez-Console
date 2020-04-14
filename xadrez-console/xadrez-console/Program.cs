@@ -21,6 +21,8 @@ namespace xadrez_console
                     try
                     {
                         Console.Clear();
+                        Console.Write("Desenvolvido por: Lucas M. Moreira\n");
+                        Console.WriteLine();
                         Tela.imprimirPartida(partida);
 
                         Console.WriteLine();
