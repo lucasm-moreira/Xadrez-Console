@@ -95,10 +95,26 @@ namespace xadrez_console
         }
 
         public static PosicaoXadrez lerPosicaoXadrez()
-        {
+        {            
             string s = Console.ReadLine();
+
+            if (s.Length != 2 || !Char.IsLetter(s[0]) || !Char.IsNumber(s[1]))
+            {
+                throw new TabuleiroException("Posição inválida!");
+            }
+
             char coluna = s[0];
             int linha = int.Parse(s[1] + "");
+
+            if (coluna != 'a' && coluna != 'b' && coluna != 'c' && coluna != 'd' && coluna != 'e' && coluna != 'f' && coluna != 'g' && coluna != 'h')
+            {
+                throw new TabuleiroException("Coluna fora do intervalo de a até h!");
+            }
+
+            if (linha < 1 || linha > 8)
+            {
+                throw new TabuleiroException("Linha não pode exceder a 8!");
+            }
 
             return new PosicaoXadrez(coluna, linha);
         } 
