@@ -17,7 +17,7 @@ namespace xadrez
         private bool podeMover(Posicao pos)
         {
             Peca p = tab.peca(pos);
-            return p == null || p.cor != this.cor;
+            return p == null || p.cor != cor;
         }
 
         public override bool[,] movimentosPossiveis()
@@ -32,12 +32,12 @@ namespace xadrez
             {
                 mat[pos.linha, pos.coluna] = true;
 
-                if (tab.peca(pos) != null && tab.peca(pos).cor != this.cor)
+                if (tab.peca(pos) != null && tab.peca(pos).cor != cor)
                 {
                     break;
                 }
 
-                pos.definirValores(posicao.linha - 1, posicao.coluna);
+                pos.definirValores(pos.linha - 1, pos.coluna);
             }
 
             //Leste
@@ -46,12 +46,12 @@ namespace xadrez
             {
                 mat[pos.linha, pos.coluna] = true;
 
-                if (tab.peca(pos) != null && tab.peca(pos).cor != this.cor)
+                if (tab.peca(pos) != null && tab.peca(pos).cor != cor)
                 {
                     break;
                 }
 
-                pos.definirValores(posicao.linha, posicao.coluna + 1);
+                pos.definirValores(pos.linha, pos.coluna + 1);
             }
 
             //Sul
@@ -60,12 +60,12 @@ namespace xadrez
             {
                 mat[pos.linha, pos.coluna] = true;
 
-                if (tab.peca(pos) != null && tab.peca(pos).cor != this.cor)
+                if (tab.peca(pos) != null && tab.peca(pos).cor != cor)
                 {
                     break;
                 }
 
-                pos.definirValores(posicao.linha + 1, posicao.coluna);
+                pos.definirValores(pos.linha + 1, pos.coluna);
             }
 
             //Oeste
@@ -74,12 +74,12 @@ namespace xadrez
             {
                 mat[pos.linha, pos.coluna] = true;
 
-                if (tab.peca(pos) != null && tab.peca(pos).cor != this.cor)
+                if (tab.peca(pos) != null && tab.peca(pos).cor != cor)
                 {
                     break;
                 }
 
-                pos.definirValores(posicao.linha, posicao.coluna - 1);
+                pos.definirValores(pos.linha, pos.coluna - 1);
             }
 
             //Noroeste
@@ -88,12 +88,12 @@ namespace xadrez
             {
                 mat[pos.linha, pos.coluna] = true;
 
-                if (tab.peca(pos) != null && tab.peca(pos).cor != this.cor)
+                if (tab.peca(pos) != null && tab.peca(pos).cor != cor)
                 {
                     break;
                 }
 
-                pos.definirValores(posicao.linha - 1, posicao.coluna - 1);
+                pos.definirValores(pos.linha - 1, pos.coluna - 1);
             }
 
             //Nordeste
@@ -102,12 +102,12 @@ namespace xadrez
             {
                 mat[pos.linha, pos.coluna] = true;
 
-                if (tab.peca(pos) != null && tab.peca(pos).cor != this.cor)
+                if (tab.peca(pos) != null && tab.peca(pos).cor != cor)
                 {
                     break;
                 }
 
-                pos.definirValores(posicao.linha - 1, posicao.coluna + 1);
+                pos.definirValores(pos.linha - 1, pos.coluna + 1);
             }
 
             //Sudeste
@@ -116,12 +116,12 @@ namespace xadrez
             {
                 mat[pos.linha, pos.coluna] = true;
 
-                if (tab.peca(pos) != null && tab.peca(pos).cor != this.cor)
+                if (tab.peca(pos) != null && tab.peca(pos).cor != cor)
                 {
                     break;
                 }
 
-                pos.definirValores(posicao.linha + 1, posicao.coluna + 1);
+                pos.definirValores(pos.linha + 1, pos.coluna + 1);
             }
 
             //Sudoeste
@@ -130,12 +130,12 @@ namespace xadrez
             {
                 mat[pos.linha, pos.coluna] = true;
 
-                if (tab.peca(pos) != null && tab.peca(pos).cor != this.cor)
+                if (tab.peca(pos) != null && tab.peca(pos).cor != cor)
                 {
                     break;
                 }
 
-                pos.definirValores(posicao.linha + 1, posicao.coluna - 1);
+                pos.definirValores(pos.linha + 1, pos.coluna - 1);
             }
 
             return mat;
